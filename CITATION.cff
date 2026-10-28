@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "If you use ETC-Bench, TACS, SENA, or the released model canonicalizers, please cite this work."
+type: software
+title: "ETC-Bench: A Multilingual Benchmark for Evaluation-Side Transcript Canonicalization"
+version: 1.0.0
+date-released: 2026-10-28
+repository-code: "https://github.com/zh-qian2004/etc-bench"
+url: "https://github.com/zh-qian2004/etc-bench"
+authors:
+  - given-names: Zhiheng
+    family-names: Qian
+  - given-names: Junhao
+    family-names: Du
+  - given-names: Jing
+    family-names: Peng
+  - given-names: Hanqi
+    family-names: Li
+  - given-names: Kunyang
+    family-names: Peng
+  - given-names: Feng
+    family-names: Xue
+  - given-names: Shuai
+    family-names: Wang
+  - given-names: Kai
+    family-names: Yu
+abstract: >-
+  ETC-Bench evaluates evaluation-side transcript canonicalization across
+  1,098 minimal pairs, 181 canonicalization phenomena, and 12 languages.
+  The repository also releases the SENA evaluator, the Taxonomy-Guided Agent
+  Canonicalization Skill, and two supervised model canonicalizers.
+keywords:
+  - transcript canonicalization
+  - speech-to-text evaluation
+  - multilingual benchmark
+  - text normalization
+  - language agents
+preferred-citation:
+  type: article
+  title: "ETC-Bench: A Multilingual Benchmark for Evaluation-Side Transcript Canonicalization"
+  year: 2026
+  authors:
+    - given-names: Zhiheng
+      family-names: Qian
+    - given-names: Junhao
+      family-names: Du
+    - given-names: Jing
+      family-names: Peng
+    - given-names: Hanqi
+      family-names: Li
+    - given-names: Kunyang
+      family-names: Peng
+    - given-names: Feng
+      family-names: Xue
+    - given-names: Shuai
+      family-names: Wang
+    - given-names: Kai
+      family-names: Yu

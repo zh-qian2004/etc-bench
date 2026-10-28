@@ -1,0 +1,82 @@
+{
+  "version": "1.0.0",
+  "created_at": "2026-09-08T10:35:36.544354+00:00",
+  "languages": {
+    "ar": {
+      "rows": 86,
+      "finalized_at": "2026-09-07T00:35:12.266041+00:00",
+      "file": "ar.jsonl"
+    },
+    "bn": {
+      "rows": 98,
+      "finalized_at": "2026-09-07T01:38:10.388885+00:00",
+      "file": "bn.jsonl"
+    },
+    "de": {
+      "rows": 93,
+      "finalized_at": "2026-09-08T04:21:28.295378+00:00",
+      "file": "de.jsonl"
+    },
+    "en": {
+      "rows": 88,
+      "finalized_at": "2026-09-08T03:03:22.512927+00:00",
+      "file": "en.jsonl"
+    },
+    "fa": {
+      "rows": 80,
+      "finalized_at": "2026-09-07T02:14:05.077603+00:00",
+      "file": "fa.jsonl"
+    },
+    "fr": {
+      "rows": 89,
+      "finalized_at": "2026-09-07T02:39:46.893261+00:00",
+      "file": "fr.jsonl"
+    },
+    "hi": {
+      "rows": 100,
+      "finalized_at": "2026-09-07T03:08:56.817632+00:00",
+      "file": "hi.jsonl"
+    },
+    "id": {
+      "rows": 98,
+      "finalized_at": "2026-09-07T03:30:10.406215+00:00",
+      "file": "id.jsonl"
+    },
+    "ja": {
+      "rows": 76,
+      "finalized_at": "2026-09-07T04:02:11.858745+00:00",
+      "file": "ja.jsonl"
+    },
+    "ru": {
+      "rows": 100,
+      "finalized_at": "2026-09-07T04:35:09.449813+00:00",
+      "file": "ru.jsonl"
+    },
+    "vi": {
+      "rows": 98,
+      "finalized_at": "2026-09-07T06:01:02.220054+00:00",
+      "file": "vi.jsonl"
+    },
+    "zh": {
+      "rows": 92,
+      "finalized_at": "2026-09-08T01:01:21.318040+00:00",
+      "file": "zh.jsonl"
+    }
+  },
+  "total_rows": 1098,
+  "checksums": {
+    "ar.jsonl": "9de825b2fad3477d364f596f7c5de243e408105a6650e435481ef3f3e3be1196",
+    "bn.jsonl": "a5c4a6cab0eac66b84342a5b6272d0d7443ed7f4b45613d149e998f34d1c18ed",
+    "de.jsonl": "bbe296bccc38ecde54df7c2e1ff685eb25b731127bdd0fd14f0e818b684d911d",
+    "en.jsonl": "32096abc82c1acffc040a14a33de9eedba747beec6625dd26ebb36f95066a08a",
+    "fa.jsonl": "b0d5e2d9665221a40ae3a2aeff6e18f64630e4868acb66b270dc4d599e6cc10b",
+    "fr.jsonl": "5b83596f44dce7fed35c002db222efb1e13a9350d38d1bbff4e7fd376fc6d47e",
+    "hi.jsonl": "319b3d1dabe999c78c0bc8b166b202af5c9d75d7f1f3329c867ac859d1c40fb7",
+    "id.jsonl": "bd4e1ba40a6592c85ee5c3dcf437b666179aaa274e75eb6a7d564e5f0eae551d",
+    "ja.jsonl": "1a7c516f08c67acd2070e6ab091410e7cf4d0dc25e9d372f43f30ce9f0c716c6",
+    "ru.jsonl": "76edb06fd7f9468f8b83ae5ac008d4f483b9a9e6b56da0ef687b74266fb4f248",
+    "vi.jsonl": "cc7f8ff6b30a84a4aca5749c09484dfa3794a57d4265130abb90db2147fe4df4",
+    "zh.jsonl": "9d764d9bffc8646adade85d7f457aaa7c937700b5c79709726bb642cd8f93e00"
+  },
+  "warnings": []
+}

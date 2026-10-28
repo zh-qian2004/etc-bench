@@ -1,0 +1,21 @@
+models:
+  etc-qwen3.5-4b:
+    model_id: zhiheng-qian/etc-qwen3.5-4b
+    release_status: published
+    base_model: Qwen3.5-4B
+    source_dtype: float32
+    evaluation:
+      metric: SENA
+      score: 59.2
+      delta: 0.10
+      training_epochs: 3
+
+  etc-qwen3.5-0.8b:
+    model_id: zhiheng-qian/etc-qwen3.5-0.8b
+    release_status: published
+    base_model: Qwen3.5-0.8B
+    evaluation:
+      metric: SENA
+      score: 43.6
+      delta: 0.10
+
