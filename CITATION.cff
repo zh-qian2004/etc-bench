@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "If you use ETC-Bench, TACS, SENA, or the released model canonicalizers, please cite this work."
+message: "If you use ETC-Bench, TACS, SENA, or the released model canonicalizers, please cite the associated arXiv paper."
 type: software
 title: "ETC-Bench: A Multilingual Benchmark for Evaluation-Side Transcript Canonicalization"
 version: 1.0.0
 date-released: 2026-10-28
 repository-code: "https://github.com/zh-qian2004/etc-bench"
-url: "https://github.com/zh-qian2004/etc-bench"
+url: "https://arxiv.org/abs/2610.36527"
 authors:
   - given-names: Zhiheng
     family-names: Qian
@@ -19,8 +19,6 @@ authors:
     family-names: Peng
   - given-names: Feng
     family-names: Xue
-  - given-names: Shuai
-    family-names: Wang
   - given-names: Kai
     family-names: Yu
 abstract: >-
@@ -38,6 +36,7 @@ preferred-citation:
   type: article
   title: "ETC-Bench: A Multilingual Benchmark for Evaluation-Side Transcript Canonicalization"
   year: 2026
+  url: "https://arxiv.org/abs/2610.36527"
   authors:
     - given-names: Zhiheng
       family-names: Qian
@@ -51,7 +50,5 @@ preferred-citation:
       family-names: Peng
     - given-names: Feng
       family-names: Xue
-    - given-names: Shuai
-      family-names: Wang
     - given-names: Kai
       family-names: Yu
