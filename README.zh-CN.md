@@ -31,6 +31,8 @@ ETC-Bench 是用于评测 **evaluation-side transcript canonicalization（ETC，
 
 <p align="center"><strong>1,098</strong> 个最小对 &nbsp;·&nbsp; <strong>181</strong> 个现象 &nbsp;·&nbsp; <strong>12</strong> 种语言 &nbsp;·&nbsp; <strong>5</strong> 个类别</p>
 
+<p align="center"><a href="./assets/readme/etc-bench-overview.png"><img src="./assets/readme/etc-bench-overview.png" width="100%" alt="ETC-Bench 的现象 taxonomy、benchmark 样本结构与 SENA 评测指标概览"></a></p>
+
 ## 什么是 ETC？
 
 Evaluation-side transcript canonicalization（ETC）是在比较系统转写和参考转写之前，将同一语音的多种有效书面形式映射到统一 canonical form 的任务。同一个 canonicalizer 分别、独立地处理两侧文本。
@@ -199,6 +201,14 @@ python evaluation/evaluate_sena.py \
 - batch 输入、输出、trace 和验证约定。
 
 TACS 是提供给 agent 的方法论 skill，agent 本身仍然负责求解。附带脚本只负责文件验证和 benchmark 隔离检查，不会作为规则系统直接生成答案。
+
+论文使用三种不同 agent model 实例化 TACS。下表报告三次独立运行的 ETC-Bench SENA 均值：
+
+| 系统 | Agent model | 运行次数 | ETC-Bench SENA |
+|---|---|---:|---:|
+| TACS–GPT | GPT-5.6-Terra | 3 | 43.3 |
+| TACS–DeepSeek | DeepSeek-V4-Flash | 3 | 43.8 |
+| TACS–Qwen | Qwen3.8-Flash | 3 | 68.8 |
 
 ```text
 Use $taxonomy-guided-agent-canonicalization-skill.

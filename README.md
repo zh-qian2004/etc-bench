@@ -31,6 +31,8 @@ ETC-Bench is a multilingual benchmark for **evaluation-side transcript canonical
 
 <p align="center"><strong>1,098</strong> minimal pairs &nbsp;·&nbsp; <strong>181</strong> phenomena &nbsp;·&nbsp; <strong>12</strong> languages &nbsp;·&nbsp; <strong>5</strong> categories</p>
 
+<p align="center"><a href="./assets/readme/etc-bench-overview.png"><img src="./assets/readme/etc-bench-overview.png" width="100%" alt="Overview of the ETC-Bench phenomenon taxonomy, benchmark-item structure, and SENA evaluation metric"></a></p>
+
 ## What is ETC?
 
 Evaluation-side transcript canonicalization (ETC) maps multiple valid written representations of the same speech to a shared canonical form before a system transcript and its reference are compared. The same canonicalizer is applied independently to both sides.
@@ -199,6 +201,14 @@ The released evaluator reports SENA overall and by language, category, and pheno
 - batch input, output, trace, and validation contracts.
 
 TACS is a methodology skill: the agent remains the solver. Its scripts validate files and check benchmark isolation; they do not implement a rule-based canonicalizer.
+
+The paper evaluates three TACS systems instantiated with different agent models. Scores are ETC-Bench SENA means over three independent runs:
+
+| System | Agent model | Runs | ETC-Bench SENA |
+|---|---|---:|---:|
+| TACS–GPT | GPT-5.6-Terra | 3 | 43.3 |
+| TACS–DeepSeek | DeepSeek-V4-Flash | 3 | 43.8 |
+| TACS–Qwen | Qwen3.8-Flash | 3 | 68.8 |
 
 ```text
 Use $taxonomy-guided-agent-canonicalization-skill.
