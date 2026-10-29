@@ -41,8 +41,7 @@ a { color: inherit; }
   backdrop-filter: blur(16px);
 }
 
-.brand { display: inline-flex; align-items: center; gap: 10px; width: fit-content; text-decoration: none; font-weight: 750; }
-.brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: var(--forest); color: var(--lime); font-family: Georgia, serif; font-size: 22px; }
+.brand { display: inline-flex; align-items: center; width: fit-content; text-decoration: none; font-weight: 750; }
 .topbar nav { display: flex; align-items: center; gap: 28px; }
 .topbar nav a { position: relative; color: #53625d; font-size: 14px; font-weight: 650; text-decoration: none; }
 .topbar nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -7px; height: 2px; background: var(--forest); transition: right 160ms ease; }
