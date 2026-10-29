@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f7f4" />
+    <meta name="description" content="Explore ETC-Bench samples and canonicalization outputs from TACS and released model canonicalizers." />
+    <title>ETC-Bench · Interactive demo</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="ETC-Bench demo home">
+        <span class="brand-mark" aria-hidden="true">E</span>
+        <span>ETC-Bench</span>
+      </a>
+      <nav aria-label="Page sections">
+        <a href="#benchmark" data-copy="navBenchmark">Benchmark</a>
+        <a href="#results" data-copy="navResults">Results</a>
+        <a href="#explorer" data-copy="navExplorer">Output explorer</a>
+      </nav>
+      <div class="top-actions">
+        <div class="language-toggle" role="group" aria-label="Interface language">
+          <button type="button" data-ui-language="en" aria-pressed="true">EN</button>
+          <button type="button" data-ui-language="zh" aria-pressed="false">中文</button>
+        </div>
+        <a class="github-link" href="https://github.com/zh-qian2004/etc-bench" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow" data-copy="heroEyebrow">Interactive benchmark and system outputs</p>
+          <h1 data-copy="heroTitle">Explore canonicalization of speech-equivalent transcript variants.</h1>
+          <p class="hero-lead" data-copy="heroLead">Browse ETC-Bench samples, compare outputs from TACS-based agents and compact model canonicalizers, and inspect how exact match and semantic preservation determine SENA.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#explorer" data-copy="exploreOutputs">Explore outputs</a>
+            <a class="button secondary" href="#results" data-copy="compareSystems">Compare systems</a>
+          </div>
+        </div>
+        <div class="hero-demo" aria-label="Canonicalization example">
+          <div class="hero-demo-head">
+            <span class="live-dot"></span>
+            <span data-copy="heroExample">Canonicalization example</span>
+            <span class="mono">en · cardinal</span>
+          </div>
+          <div class="mini-pair">
+            <span>A</span><p>The recipe calls for <mark>2</mark> eggs.</p>
+            <span>B</span><p>The recipe calls for <mark>two</mark> eggs.</p>
+          </div>
+          <div class="canonical-arrow" aria-hidden="true"><span></span>canonicalize<span></span></div>
+          <div class="mini-output">The recipe calls for <strong>2</strong> eggs.</div>
+          <div class="mini-verdict"><span>✓ Exact match</span><span>✓ Semantic preservation</span></div>
+        </div>
+      </section>
+
+      <section class="stats section-shell" id="benchmark" aria-labelledby="benchmarkTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-copy="benchmarkEyebrow">The benchmark</p>
+            <h2 id="benchmarkTitle" data-copy="benchmarkTitle">A multilingual view of transcript ambiguity</h2>
+          </div>
+          <p data-copy="benchmarkLead">Each item is a pair of valid written representations of the same spoken utterance. Filters below update the distribution and open a matching example in the output explorer.</p>
+        </div>
+        <div class="stat-grid" id="statGrid"></div>
+        <div class="taxonomy-panel">
+          <div class="taxonomy-copy">
+            <p class="eyebrow" data-copy="taxonomyEyebrow">Five-category taxonomy</p>
+            <h3 data-copy="taxonomyTitle">From enumerable forms to language-specific ambiguity</h3>
+            <p data-copy="taxonomyLead">Numeric expressions and symbols are language-agnostic at the phenomenon level. Abbreviations, orthographic variants, and homophonic substitutions depend on each language.</p>
+          </div>
+          <div class="category-map" id="categoryMap"></div>
+        </div>
+      </section>
+
+      <section class="results-section" id="results" aria-labelledby="resultsTitle">
+        <div class="section-shell">
+          <div class="section-heading light">
+            <div>
+              <p class="eyebrow" data-copy="resultsEyebrow">Evaluation results</p>
+              <h2 id="resultsTitle" data-copy="resultsTitle">TACS agents and compact model canonicalizers</h2>
+            </div>
+            <p data-copy="resultsLead">TACS values are three-run results reported in the paper. Released compact models use one deterministic full-benchmark run. Select a system to inspect its language and category profile.</p>
+          </div>
+          <div class="system-cards" id="systemCards"></div>
+          <div class="result-detail">
+            <div class="result-detail-head">
+              <div>
+                <p class="eyebrow" id="detailKind"></p>
+                <h3 id="detailTitle"></h3>
+                <p id="detailNote"></p>
+              </div>
+              <div class="dimension-toggle" role="group" aria-label="Result dimension">
+                <button type="button" data-dimension="languages" aria-pressed="true" data-copy="byLanguage">By language</button>
+                <button type="button" data-dimension="categories" aria-pressed="false" data-copy="byCategory">By category</button>
+              </div>
+            </div>
+            <div class="bar-chart" id="barChart"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="explorer section-shell" id="explorer" aria-labelledby="explorerTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-copy="explorerEyebrow">Pair-level inspection</p>
+            <h2 id="explorerTitle" data-copy="explorerTitle">Benchmark sample and canonical outputs</h2>
+          </div>
+          <p data-copy="explorerLead">Filter the complete release, then compare how each system transforms the two transcripts. TACS outputs shown here come from one representative run rather than an average of strings across runs.</p>
+        </div>
+
+        <div class="filters" aria-label="Benchmark filters">
+          <label><span data-copy="filterLanguage">Language</span><select id="languageFilter"></select></label>
+          <label><span data-copy="filterCategory">Category</span><select id="categoryFilter"></select></label>
+          <label><span data-copy="filterPhenomenon">Phenomenon</span><select id="phenomenonFilter"></select></label>
+          <label class="search-field"><span data-copy="filterSearch">Search text or ID</span><input id="searchInput" type="search" placeholder="e.g. currency, 2045…" /></label>
+          <label><span data-copy="filterOutcome">Selected-system outcome</span><select id="outcomeFilter"></select></label>
+          <button class="clear-button" type="button" id="clearFilters" data-copy="clearFilters">Clear</button>
+        </div>
+
+        <div class="explorer-layout">
+          <aside class="sample-list-panel">
+            <div class="list-head">
+              <strong id="matchCount"></strong>
+              <button type="button" id="randomSample" data-copy="randomSample">Random sample</button>
+            </div>
+            <div class="sample-list" id="sampleList" role="listbox" aria-label="Benchmark samples"></div>
+          </aside>
+
+          <article class="sample-detail" id="sampleDetail">
+            <div class="sample-meta">
+              <div class="meta-badges" id="metaBadges"></div>
+              <span class="sample-id" id="sampleId"></span>
+            </div>
+            <h3 id="phenomenonTitle"></h3>
+            <p class="phenomenon-description" id="phenomenonDescription"></p>
+
+            <div class="source-pair">
+              <div class="text-card source-a"><span class="side-label">A</span><p id="sourceA"></p></div>
+              <div class="text-card source-b"><span class="side-label">B</span><p id="sourceB"></p></div>
+            </div>
+
+            <div class="output-toolbar">
+              <div>
+                <p class="eyebrow" data-copy="canonicalOutputs">Canonical outputs</p>
+                <h4 id="outputSystemTitle"></h4>
+              </div>
+              <select id="outputSystemSelect" aria-label="Select canonicalization system"></select>
+            </div>
+            <div class="output-pair">
+              <div class="text-card output-a"><span class="side-label">C(A)</span><p id="outputA"></p></div>
+              <div class="text-card output-b"><span class="side-label">C(B)</span><p id="outputB"></p></div>
+            </div>
+
+            <div class="verdict-grid">
+              <div class="verdict" id="exactVerdict"><span class="verdict-icon"></span><div><strong data-copy="exactCondition">Exact-match condition</strong><small id="exactText"></small></div></div>
+              <div class="verdict" id="semanticVerdict"><span class="verdict-icon"></span><div><strong data-copy="semanticCondition">Semantic-preservation condition</strong><small id="semanticText"></small></div></div>
+              <div class="credit-card" id="creditCard"><span data-copy="senaCredit">SENA credit</span><strong id="creditValue"></strong></div>
+            </div>
+            <details class="metric-details">
+              <summary data-copy="metricDetails">Show metric values</summary>
+              <div><span>t<sub>i</sub></span><strong id="metricT"></strong><small data-copy="metricTLabel">source-pair similarity</small></div>
+              <div><span>f<sub>i</sub></span><strong id="metricF"></strong><small data-copy="metricFLabel">lower input–output similarity</small></div>
+              <div><span>δ</span><strong>0.10</strong><small data-copy="metricDeltaLabel">similarity tolerance</small></div>
+            </details>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div><strong>ETC-Bench</strong><span data-copy="footerText">Evaluation-side Transcript Canonicalization</span></div>
+      <div class="footer-links">
+        <a href="https://github.com/zh-qian2004/etc-bench" target="_blank" rel="noopener">Repository ↗</a>
+        <a href="https://arxiv.org/abs/2610.36527" target="_blank" rel="noopener">Paper ↗</a>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

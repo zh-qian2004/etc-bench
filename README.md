@@ -1,8 +1,16 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/readme/etc-bench-logo-dark.png">
+    <img src="./assets/readme/etc-bench-logo.png" width="240" alt="ETC-Bench logo: one speech signal branches into multiple transcript variants and converges to one canonical transcript">
+  </picture>
+</p>
+
 <h1 align="center">ETC-Bench</h1>
 
 <p align="center"><strong>A multilingual benchmark for evaluation-side transcript canonicalization</strong></p>
 
 <p align="center">
+<a href="https://zh-qian2004.github.io/etc-bench/demo/"><strong>Interactive Demo ↗</strong></a> ·
 <a href="https://arxiv.org/abs/2610.36527"><strong>Paper ↗</strong></a> ·
 <a href="#quick-start"><strong>Quick Start</strong></a> ·
 <a href="#tacs"><strong>TACS</strong></a> ·
@@ -12,22 +20,24 @@
 <p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
 
 <p align="center">
-<a href="#why-etc">Why ETC?</a> · <a href="#whats-in-this-repository">Resources</a> ·
+<a href="#what-is-etc">What is ETC?</a> · <a href="#whats-in-this-repository">Resources</a> ·
 <a href="#etc-bench">Benchmark</a> · <a href="#sena">Metric</a> ·
 <a href="#citation">Citation</a>
 </p>
 
 ---
 
-ETC-Bench evaluates **evaluation-side transcript canonicalization (ETC)**: independently mapping multiple written surface forms of the same speech to one canonical form before a system transcript and its reference are compared.
+ETC-Bench is a multilingual benchmark for **evaluation-side transcript canonicalization (ETC)**. It evaluates whether speech-equivalent transcript variants receive identical canonical outputs without substantial incidental semantic change.
 
 <p align="center"><strong>1,098</strong> minimal pairs &nbsp;·&nbsp; <strong>181</strong> phenomena &nbsp;·&nbsp; <strong>12</strong> languages &nbsp;·&nbsp; <strong>5</strong> categories</p>
 
-## Why ETC?
+## What is ETC?
+
+Evaluation-side transcript canonicalization (ETC) maps multiple valid written representations of the same speech to a shared canonical form before a system transcript and its reference are compared. The same canonicalizer is applied independently to both sides.
 
 Speech does not always determine a unique written transcript. Numeric expressions, abbreviations, spelling variants, symbols, and homophones can produce different valid surface forms for the same utterance. Direct text comparison may therefore count a representational choice as a system error.
 
-ETC applies the **same canonicalizer independently** to the system transcript and the reference:
+For example:
 
 | Transcript A | Transcript B | Shared canonical form |
 |---|---|---|
@@ -43,6 +53,7 @@ ETC does not prescribe whether the target should resemble conventional text norm
 | [`evaluation/`](evaluation/) | Shared input preparation, validation, and SENA evaluation |
 | [`tools/tacs/`](tools/tacs/) | Taxonomy-Guided Agent Canonicalization Skill |
 | [`tools/model-canonicalizer/`](tools/model-canonicalizer/) | Inference code for the released 4B and 0.8B canonicalizers |
+| [`demo/`](demo/) | Static [interactive demo](https://zh-qian2004.github.io/etc-bench/demo/) for browsing samples and canonicalizer outputs |
 | [`CITATION.cff`](CITATION.cff) | Machine-readable citation metadata |
 
 ## ETC-Bench
@@ -231,7 +242,9 @@ CUDA, Ascend NPU, and CPU inference are supported. `torch_npu` and CANN are requ
 
 ```text
 etc-bench/
+├── assets/readme/              # README logo assets
 ├── benchmark/                  # Release JSONL files and manifest
+├── demo/                       # Static interactive demo
 ├── evaluation/                 # Shared SENA evaluation
 ├── tools/
 │   ├── tacs/                   # Agent skill, taxonomy, and contracts

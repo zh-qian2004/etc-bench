@@ -1,8 +1,16 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/readme/etc-bench-logo-dark.png">
+    <img src="./assets/readme/etc-bench-logo.png" width="240" alt="ETC-Bench 标志：同一语音产生多种转写形式，并汇聚为统一的 canonical transcript">
+  </picture>
+</p>
+
 <h1 align="center">ETC-Bench</h1>
 
 <p align="center"><strong>面向评测侧转写文本规范化的多语种基准</strong></p>
 
 <p align="center">
+<a href="https://zh-qian2004.github.io/etc-bench/demo/"><strong>交互演示 ↗</strong></a> ·
 <a href="https://arxiv.org/abs/2610.36527"><strong>论文 ↗</strong></a> ·
 <a href="#快速开始"><strong>快速开始</strong></a> ·
 <a href="#tacs"><strong>TACS</strong></a> ·
@@ -12,22 +20,24 @@
 <p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
 
 <p align="center">
-<a href="#为什么需要-etc">为什么需要 ETC？</a> · <a href="#仓库内容">资源</a> ·
+<a href="#什么是-etc">什么是 ETC？</a> · <a href="#仓库内容">资源</a> ·
 <a href="#etc-bench">Benchmark</a> · <a href="#sena">指标</a> ·
 <a href="#引用">引用</a>
 </p>
 
 ---
 
-ETC-Bench 用于评测 **evaluation-side transcript canonicalization（ETC，评测侧转写文本规范化）**：在比较系统转写和参考转写之前，分别将同一语音对应的多种书面形式映射到统一的 canonical form。
+ETC-Bench 是用于评测 **evaluation-side transcript canonicalization（ETC，评测侧转写文本规范化）** 的多语种 benchmark。它检验语音等价的 transcript variants 能否得到完全相同的 canonical output，同时限制明显的附带语义变化。
 
 <p align="center"><strong>1,098</strong> 个最小对 &nbsp;·&nbsp; <strong>181</strong> 个现象 &nbsp;·&nbsp; <strong>12</strong> 种语言 &nbsp;·&nbsp; <strong>5</strong> 个类别</p>
 
-## 为什么需要 ETC？
+## 什么是 ETC？
+
+Evaluation-side transcript canonicalization（ETC）是在比较系统转写和参考转写之前，将同一语音的多种有效书面形式映射到统一 canonical form 的任务。同一个 canonicalizer 分别、独立地处理两侧文本。
 
 语音并不总能唯一决定书面转写。数字、缩写、拼写变体、符号和同音表达，都可能让同一句语音产生不同但有效的书面形式。直接比较文本时，这种表达选择可能被错误计为系统错误。
 
-ETC 将**同一个规范化器分别应用**于系统转写和参考转写：
+例如：
 
 | 转写 A | 转写 B | 统一 canonical form |
 |---|---|---|
@@ -43,6 +53,7 @@ ETC 不规定目标形式必须遵循传统文本规范化（TN）还是逆文�
 | [`evaluation/`](evaluation/) | 统一的输入准备、格式验证和 SENA 评测 |
 | [`tools/tacs/`](tools/tacs/) | Taxonomy-Guided Agent Canonicalization Skill |
 | [`tools/model-canonicalizer/`](tools/model-canonicalizer/) | 4B 和 0.8B 小模型规范化器的推理代码 |
+| [`demo/`](demo/) | 用于浏览样本和 canonicalizer 输出的静态[交互演示](https://zh-qian2004.github.io/etc-bench/demo/) |
 | [`CITATION.cff`](CITATION.cff) | 机器可读的引用信息 |
 
 ## ETC-Bench
@@ -231,7 +242,9 @@ Write the validated JSONL results to:
 
 ```text
 etc-bench/
+├── assets/readme/              # README Logo 素材
 ├── benchmark/                  # Release JSONL 与 manifest
+├── demo/                       # 静态交互演示
 ├── evaluation/                 # 统一 SENA 评测
 ├── tools/
 │   ├── tacs/                   # Agent skill、taxonomy 与 contracts
