@@ -17,13 +17,7 @@
 <a href="#model-canonicalizers"><strong>Models</strong></a>
 </p>
 
-<p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
-
-<p align="center">
-<a href="#what-is-etc">What is ETC?</a> · <a href="#whats-in-this-repository">Resources</a> ·
-<a href="#etc-bench">Benchmark</a> · <a href="#sena">Metric</a> ·
-<a href="#citation">Citation</a>
-</p>
+<p align="center"><strong>English</strong> · <a href="https://github.com/zh-qian2004/etc-bench/blob/main/README.zh-CN.md">简体中文</a></p>
 
 ---
 

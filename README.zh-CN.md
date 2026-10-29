@@ -17,13 +17,7 @@
 <a href="#小模型规范化器"><strong>模型</strong></a>
 </p>
 
-<p align="center"><a href="README.md">English</a> · <strong>简体中文</strong></p>
-
-<p align="center">
-<a href="#什么是-etc">什么是 ETC？</a> · <a href="#仓库内容">资源</a> ·
-<a href="#etc-bench">Benchmark</a> · <a href="#sena">指标</a> ·
-<a href="#引用">引用</a>
-</p>
+<p align="center"><a href="https://github.com/zh-qian2004/etc-bench/blob/main/README.md">English</a> · <strong>简体中文</strong></p>
 
 ---
 
